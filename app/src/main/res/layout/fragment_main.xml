@@ -1,0 +1,146 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.blackflag.roadsandhighwaysdepartment.MainFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#EF6C00"
+                    android:layout_margin="5dp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:elevation="10dp"
+                    android:id="@+id/internatonalhighway"
+                    android:padding="5dp"
+                    android:textColor="#ffffff"
+                    android:text="Inter national Highway"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:elevation="10dp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:id="@+id/asianhighway"
+                    android:padding="5dp"
+                    android:background="#EF6C00"
+                    android:textColor="#ffffff"
+                    android:text="ASHIAN Highway"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#EF6C00"
+                    android:layout_margin="5dp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:elevation="10dp"
+                    android:id="@+id/district"
+                    android:padding="5dp"
+                    android:textColor="#ffffff"
+                    android:text="District"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:elevation="10dp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:id="@+id/axleload"
+                    android:padding="5dp"
+                    android:background="#EF6C00"
+                    android:textColor="#ffffff"
+                    android:text="AXLE LOAD"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#EF6C00"
+                    android:layout_margin="5dp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:elevation="10dp"
+                    android:id="@+id/bordercorss"
+                    android:padding="5dp"
+                    android:textColor="#ffffff"
+                    android:text="Border Crossing"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:elevation="10dp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:id="@+id/seaport"
+                    android:padding="5dp"
+                    android:background="#EF6C00"
+                    android:textColor="#ffffff"
+                    android:text="SEA PORT"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:elevation="10dp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:id="@+id/egp"
+                    android:padding="5dp"
+                    android:background="#EF6C00"
+                    android:textColor="#ffffff"
+                    android:text="e-GP Tender"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>
