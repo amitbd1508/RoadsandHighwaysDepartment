@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFE0B2"
-    tools:context="com.blackflag.roadsandhighwaysdepartment.EGPTender">
+    tools:context="com.blackflag.roadsandhighwaysdepartment.fragment.EGPTender">
 
     <ScrollView
         android:layout_width="match_parent"

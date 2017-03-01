@@ -1,4 +1,4 @@
-package com.blackflag.roadsandhighwaysdepartment;
+package com.blackflag.roadsandhighwaysdepartment.fragment;
 
 
 import android.content.Context;
@@ -12,7 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.blackflag.roadsandhighwaysdepartment.R;
+import com.blackflag.roadsandhighwaysdepartment.activity.MainActivity;
+
 import java.util.List;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 
 /**
@@ -27,8 +32,7 @@ public class MainFragment extends Fragment {
 
     public MainFragment() {
         // Required empty public constructor
-        on=Color.parseColor("#FF5722");
-        off=Color.parseColor("#EF6C00");
+
     }
 
 
@@ -37,6 +41,8 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_main, container, false);
+        on=Color.parseColor("#FF5722");
+        off=Color.parseColor("#EF6C00");
         sharedPreferences=getActivity().getSharedPreferences("egp", Context.MODE_PRIVATE);
         view.findViewById(R.id.internatonalhighway).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,23 +131,46 @@ public class MainFragment extends Fragment {
         if(b)
         {
 
-            for (int i=0;i<9;i++)
-            {
-                String data=sharedPreferences.getString(String.valueOf(i),"11000");
-                send(data);
-                Log.v(getClass().getSimpleName(),i+"--------"+data);
-            }
+            Thread the=new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    for (int i=0;i<9;i++)
+                    {
+                        String data=sharedPreferences.getString(String.valueOf(i),"11000");
+                        if(data!="11000")
+                        send(data);
+                        try {
+                            Thread.sleep(500);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        Log.v(getClass().getSimpleName(),i+"--------"+data);
+                    }
+                }
+            });
+            the.start();
 
 
 
         }else {
 
-            for (int i=0;i<9;i++)
-            {
-                String data=String.valueOf(11000+(i*10));
-                send(data);
-                Log.v(getClass().getSimpleName(),i+"--------"+data);
-            }
+            Thread thread=new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    for (int i=0;i<9;i++)
+                    {
+                        String data=String.valueOf(11000+(i*10));
+                        send(data);
+                        try {
+                            Thread.sleep(500);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        Log.v(getClass().getSimpleName(),i+"--------"+data);
+                    }
+                }
+            });
+            thread.start();
 
 
         }
@@ -152,12 +181,12 @@ public class MainFragment extends Fragment {
         if(color.getColor()==on)
         {
             view.setBackgroundColor(off);
-            return false;
+            return true;
         }
         else
         {
             view.setBackgroundColor(on);
-            return true;
+            return false;
         }
     }
 
@@ -165,7 +194,14 @@ public class MainFragment extends Fragment {
     {
 
 
-        return false;
+       try {
+           MainActivity.mSmoothBluetooth.send(data);
+           return true;
+       }catch (Exception ex)
+       {
+           ex.printStackTrace();
+           return false;
+       }
     }
 
 }

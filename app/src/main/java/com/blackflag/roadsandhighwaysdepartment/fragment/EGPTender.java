@@ -1,4 +1,4 @@
-package com.blackflag.roadsandhighwaysdepartment;
+package com.blackflag.roadsandhighwaysdepartment.fragment;
 
 
 import android.content.Context;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.Toast;
+
+import com.blackflag.roadsandhighwaysdepartment.R;
+import com.blackflag.roadsandhighwaysdepartment.callbacks.SendDataListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +38,7 @@ public class EGPTender extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_egptender, container, false);
+
         sharedpreferences = getActivity().getSharedPreferences("egp", Context.MODE_PRIVATE);
 
         checkBoxes=new ArrayList<CheckBox>();
